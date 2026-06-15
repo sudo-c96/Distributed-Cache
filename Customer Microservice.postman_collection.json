@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "b9bee07f-4b0b-4a38-a459-d1ae4f77cd80",
+		"name": "Customer Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22804906"
+	},
+	"item": [
+		{
+			"name": "POST - http://localhost:8080/api/v1/customers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Ramesh\",\r\n    \"lastName\" : \"{{$randomLastName}}\",\r\n    \"gender\" : \"MALE\",\r\n    \"age\" : \"26\",\r\n    \"contactNo\" : \"{{$randomPhoneNumber}}\",\r\n    \"emailId\" : \"{{$randomEmail}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - http://localhost:8080/api/v1/customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - http://localhost:8080/api/v1/customers/64db9689d5ac695688a008dd",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/7b2a25f1-887e-484c-9705-9481958b8ace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"7b2a25f1-887e-484c-9705-9481958b8ace"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - http://localhost:8080/api/v1/customers/64db9689d5ac695688a008dd",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"firstName\": \"Ramesh\",\r\n    \"age\": 27\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/4a4f6b4e-87fc-467b-9df3-5c5f05097f93",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"4a4f6b4e-87fc-467b-9df3-5c5f05097f93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - http://localhost:8080/api/v1/customers/64db97c1d5ac695688a008e7",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/customers/7b2a25f1-887e-484c-9705-9481958b8ace",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"7b2a25f1-887e-484c-9705-9481958b8ace"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,61 @@
+Redis Installation:
+
+Install any Linux environment like Kali Linux or Ubuntu
+
+In the Linux environment use this commands to Run Redis:
+sudo apt update
+sudo apt install redis-server
+redis-server & (to start in background)
+redis-cli (go inside redis-cli)
+
+Redis Commands:
+monitor - To view all operations
+KEYS * - Gives all the keys
+GET {KeyName} - To get value of a key
+flushall - To remove all Keys
+
+
+Connect your local Mongo DB in properties file instead of Connection URL
+
+
+
+
+Read Through - time to live, cache has fixed size
+
+Cache Miss - Cache Library/ cache client fetches data from db and stores it in cache and give back to application
+
+
+
+Pros - Good approach for Heavy Read application
+Logic of fetching the data from DB and updating cache is separated from the application
+
+Cons - for new data read, always it will be a cache miss, so we can preload cache
+appropriate writing strategy to be used
+cache document structure should be same as DB table
+
+
+
+Write Through - write data to cache, synchronously writes data to db
+Both should pass, in a single transaction
+
+we are using a cache client - redisson and overiding the implementations of the MapWriter and MapLoader interface
+
+
+PROS - Cache and DB are always consistent
+Cache Hit chances increase a lot, new data comes always written to cache
+
+Cons - Alone it is not useful, should be used with any reading strategy - cache-aside or read-through
+2 phase commit
+not fully fault tolerated, both DB and cache should be up for a successful transaction
+
+
+
+
+To see distributed caching, run the write through application in two different ports:
+Check the data already fetched by get api in one port is also available for the get api in other port
+
+
+time to live
+client
+
+

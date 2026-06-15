@@ -1,0 +1,20 @@
+Redis Server:
+--------------
+1) docker pull redis
+
+2) docker run --name dc-redis -d -p 6379:6379 redis
+
+Redis Client: (New window)
+---------------------------
+
+1) docker run -it --link dc-redis:redis --rm redis redis-cli -h redis -p 6379
+
+This opens the redis-cli prompt as "redis:6379"
+
+2) To print Hello World
+
+redis:6379> SET hkey "Hello World!"
+
+redis:6379> GET hkey
+
+3) Try various commands like dbsize , info, etc...
